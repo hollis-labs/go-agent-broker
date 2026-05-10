@@ -4,6 +4,31 @@ All notable changes to `go-agent-broker` are documented here. The format
 follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and the
 project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## v0.2.1 — 2026-05-10
+
+Republishes the v0.2.0 surface with the public-release cleanup applied
+to the release notes. **No code changes vs v0.2.0** — this tag exists
+because the original v0.2.0 GitHub release body shipped with internal-
+infrastructure references that were not appropriate for an OSS audience;
+the v0.2.0 release body has since been edited to strip those references,
+but the v0.2.0 tag itself is immutable on `proxy.golang.org`. Per Go
+modules guidance, `v0.2.0` is retracted in `go.mod` so `go get @latest`
+resolves to v0.2.1. Consumers already pinned to v0.2.0 are not affected;
+new adopters and CI bumps will pick up v0.2.1.
+
+### Added
+
+- `retract v0.2.0` directive in `go.mod` per the Go modules retraction
+  guidance (`go help mod retract`). v0.2.1 ships the same `DeterministicBroker`
+  surface the v0.2.0 tag points at; the retraction is a metadata fix, not
+  a code rollback.
+
+### Notes
+
+- v0.2.0 remains installable for consumers explicitly pinning to it, but
+  `go get` and `go list -m -u` will surface v0.2.0 as retracted.
+- See v0.2.0 entry below for the full feature surface.
+
 ## v0.2.0 — 2026-05-10
 
 Adds the `DeterministicBroker` implementation alongside scaffold-era
