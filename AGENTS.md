@@ -26,9 +26,9 @@ go vet ./...
 ## Boundaries
 
 This module was absorbed into `agentkit` as `agentkit/broker` at agentkit
-v0.1.0 and has not changed since v0.2.1 (2026-05-10). New work belongs in
-`agentkit`; change this repo only to serve external consumers pinned to this
-import path.
+v0.1.0, and this repo is maintenance-only. New work belongs in `agentkit`;
+change this repo only to serve external consumers pinned to this import path.
+`CHANGELOG.md` and the git tags are the authority for what has shipped here.
 
 `Input` uses primitive-typed fields on purpose so the module stays
 dependency-free. Do not add a dependency to accept a richer classifier or
